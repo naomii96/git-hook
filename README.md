@@ -1,6 +1,6 @@
 # git-hook
 
-Git hooks are scrips that run automatically every time a particular event occurs in Git repo.
+Git hooks are scrips that run automatically every time a particular event occurs in a Git repository.
 They let you customize Git's internl behavior an trigger customizable actions at key points 
 in the development life cycle.
 
