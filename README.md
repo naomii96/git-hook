@@ -14,7 +14,10 @@ in the development life cycle.
 Git Hooks reside under .git/hooks/ of every git repo. Git automatically populates this directory
 with example scripts when you initialize a repository.
 
-```ls .git/hooks```
+```
+ls .git/hooks
+
+```
 ``` 
 applypatch-msg.sample     pre-commit.sample         prepare-commit-msg.sample
 commit-msg.sample         pre-merge-commit.sample   push-to-checkout.sample
@@ -27,7 +30,10 @@ To “install” a hook, all you have to do is remove the .sample extension. Ple
 a new file with the same name minus the .sample, and also change the permission for the file to +x
 this allows the file to be an execuable:
 
-```chmod +x pre-commit```
+```
+chmod +x pre-commit
+
+```
 
 Once all the set up is done, once you run `git commit` or `git commit -m 'message'` this `pre-commmit` script will be executed.
 

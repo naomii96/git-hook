@@ -1,11 +1,10 @@
 #!/bin/bash
 
-#this is initially created to perform checkstyle before allowing
-#user to commit
-
 current_path=`pwd`
 pom_file=`find $current_path -type f -name "pom.xml"`
-echo "pom file path - $pom_file - EOF"
 if [[ $pom_file ]]; then
+  echo "============== Performing mvn checkstyle."
   mvn checkstyle:check
+else 
+  echo "============== No pre-commit action to perform."
 fi
