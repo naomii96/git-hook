@@ -55,4 +55,4 @@ Luckly you can specify centralized directory for your hooks.
 
 After doing this all thats left if for you to add the hooks you want centralized and this will be executed when that event occurs in every Git repository.
 
-PLEASE NOTE ~this will be executed when that event occurs in every Git repository~ if you have repositories using different languages make sure your script are aware of that. So your angular application doesn't fail on java related commands.
+PLEASE NOTE *this will be executed when that event occurs in every Git repository* if you have repositories using different languages make sure your script are aware of that. So your angular application doesn't fail on java related commands.
