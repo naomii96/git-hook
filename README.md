@@ -42,3 +42,17 @@ Now you might be asking why you would want to have a hook on your repository, it
 Using a hook gives you the ability to trigger the tests on every commit, its a bit of an over kill i guess but I call it being safe.
 
 In my case here [pre-commit](https://github.com/naomii96/git-hook/blob/main/pre-commit.sample) all I wanted to do was perform mvn checkstyle:check before committing.
+
+This works for the most part yet this would mean I have to copy this file to all repositories I create - not effective at all.
+
+Luckly you can specify centralized directory for your hooks.
+
+```
+    mkdir git/centralized/hooks/
+    git config --global core.hooksPath ~/git/centralized/hooks
+
+```
+
+After doing this all thats left if for you to add the hooks you want centralized and this will be executed when that event occurs in every Git repository.
+
+PLEASE NOTE ~ this will be executed when that event occurs in every Git repository ~ if you have repositories using different languages.
