@@ -28,7 +28,7 @@ pre-applypatch.sample     pre-receive.sample
 
 To “install” a hook, all you have to do is remove the .sample extension. Please note you can create
 a new file with the same name minus the .sample, and also change the permission for the file to +x
-this allows the file to be an execuable:
+this allows the file to be an executable:
 
 ```
 chmod +x pre-commit
