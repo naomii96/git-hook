@@ -1,10 +1,33 @@
 #!/bin/bash
 
+# this script will be executed everytime you commit anything in your Git repo.
+# since its centralized please note it will be every repo.
+
+# here we are ensuring you do not commit on the main/master branch #
+branch_name=`git branch | grep '*' | cut -c3-`
+
+if [ $branch_name == "main" ] || [ $branch_name == "master" ]; then
+   tput setaf 1 # tput in this script enables us to print our echo-ed string in red.
+   echo "Cannot commit in the $branch_name branch. Create new branch and commit."
+   echo "syntax:"
+   echo "git checkout -b branch-name/git switch -c branch_name"
+   tput sgr0 # this part sets it back to the default colour.
+   exit 1
+fi
+
+# here we are performing checkstyle based on which language is used in that repo right now we only have angular and java-maven #
 current_path=`pwd`
 pom_file=`find $current_path -type f -name "pom.xml"`
 if [[ $pom_file ]]; then
   echo "============== Performing mvn checkstyle."
   mvn checkstyle:check
 else 
-  echo "============== No pre-commit action to perform."
+  package_file=`find $current_path -type f -name "package.json"`
+  if [[ $package_file ]]; then
+    npm run lint
+  else
+    tput setaf 2
+    echo "============== No pre-commit action to perform."
+    tput sgr0
+  fi
 fi
