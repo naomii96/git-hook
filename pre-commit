@@ -27,7 +27,7 @@ else
     npm run lint
   else
     tput setaf 2
-    echo "============== No pre-commit action to perform."
+    echo "============================ No pre-commit action to perform. ============================"
     tput sgr0
   fi
 fi
